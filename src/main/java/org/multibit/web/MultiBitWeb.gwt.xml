@@ -20,4 +20,9 @@
   <source path='client'/>
   <source path='shared'/>
 
+  <!-- Define a code generator -->
+  <generate-with class="org.multibit.web.client.menu.MenuGenerator">
+    <when-type-assignable class="org.multibit.web.client.menu.MenuMaker"/>
+  </generate-with>
+
 </module>

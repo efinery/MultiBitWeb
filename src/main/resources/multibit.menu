@@ -1,0 +1,17 @@
+menu File
+command OPEN_WALLET Open Wallet...
+command SAVE_AS Save As...
+command EXIT Exit
+endmenu
+menu Trade
+command RECEIVE_BITCOIN Receive Bitcoin
+command SEND_BITCOIN Send Bitcoin
+endmenu
+menu View
+command TRANSACTIONS Transactions...
+command PREFERENCES Preferences...
+endmenu
+menu Help
+command HELP Help Contents
+command ABOUT About MultiBitWeb...
+endmenu
