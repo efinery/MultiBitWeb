@@ -15,12 +15,12 @@ import java.util.Scanner;
 
 
 /**
- *  <p>Generator to provide the following to clients:<br>
- *  <ul>
- *  <li>Creation of menu items</li>
- *  </ul>
- *  </p>
- *  
+ * <p>Generator to provide the following to clients:<br>
+ * <ul>
+ * <li>Creation of menu items</li>
+ * </ul>
+ * </p>
+ * 
  */
 public class MenuGenerator extends Generator {
 

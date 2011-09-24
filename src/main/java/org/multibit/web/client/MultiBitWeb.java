@@ -17,10 +17,11 @@ public class MultiBitWeb implements EntryPoint {
    * This is the entry point method.
    */
   public void onModuleLoad() {
-    showMainMenu();
+    buildMainMenu();
+
   }
 
-  private void showMainMenu() {
+  private void buildMainMenu() {
 
     // Create a menu structure using a code generator
     MenuMaker menuMaker = GWT.create(MenuMaker.class);

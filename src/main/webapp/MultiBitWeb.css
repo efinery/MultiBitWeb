@@ -1,5 +1,13 @@
 /** Add css rules here for your application. */
 
+body, html {
+  height: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /** Example rules used by the template application (remove for your app) */
 h1 {
   font-size: 2em;
@@ -29,5 +37,7 @@ h1 {
 
 /** Set ids using widget.getElement().setId("idOfElement") */
 #closeButton {
+  display: block;
+  font-size: 16pt;
   margin: 15px 6px 6px;
 }
