@@ -52,10 +52,9 @@ public class ReceiveBitcoinDialogBox extends DialogBox {
     dialogBox.setCopyAddressButton(new Button("Copy Address"));
     dialogBox.setCreateNewButton(new Button("Create New..."));
 
-    // Dialog contains a vertical panel widget for content
+    // Require complex positioning
     FlexTable panel = new FlexTable();
 
-    // Panel is 4x7 to allow for variable column width presentation
     // Row 0
     panel.setWidget(0,0,dialogBox.getSendBitcoinImage());
     panel.setHTML(0, 1, "Give your receiving address below to the person sending you bitcoins.");

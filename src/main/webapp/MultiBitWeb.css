@@ -58,3 +58,7 @@ h1 {
 .receiveBitcoinDialogBox-wide {
   width: 400px;
 }
+
+.addressBookDialogBox {
+  width: 800px;
+}

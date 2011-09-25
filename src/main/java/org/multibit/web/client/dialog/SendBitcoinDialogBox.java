@@ -56,10 +56,9 @@ public class SendBitcoinDialogBox extends DialogBox {
     dialogBox.setCancelButton(new Button("Cancel"));
     dialogBox.setSendButton(new Button("Send"));
 
-    // Dialog contains a vertical panel widget for content
+    // Require complex positioning
     FlexTable panel = new FlexTable();
 
-    // Panel is 4x7 to allow for variable column width presentation
     // Row 0
     panel.setWidget(0,0,dialogBox.getSendBitcoinImage());
     panel.setHTML(0, 1, "Enter the address you want to send bitcoins to and the amount to send.<br>Optionally add a descriptive label for the address.");

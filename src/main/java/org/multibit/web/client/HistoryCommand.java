@@ -2,8 +2,12 @@ package org.multibit.web.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.logical.shared.SelectionEvent;
+import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.user.client.Command;
+import com.google.gwt.user.client.ui.TabPanel;
 import org.multibit.web.client.dialog.AboutDialogBox;
+import org.multibit.web.client.dialog.AddressBookDialogBox;
 import org.multibit.web.client.dialog.ReceiveBitcoinDialogBox;
 import org.multibit.web.client.dialog.SendBitcoinDialogBox;
 
@@ -63,6 +67,37 @@ public class HistoryCommand implements Command {
         }
       });
 
+    }
+    if ("ADDRESS_BOOK".equals(historyToken)) {
+      final AddressBookDialogBox dialogBox = AddressBookDialogBox.newInstance();
+      dialogBox.center();
+      dialogBox.getCancelButton().setFocus(true);
+
+      // Cancel
+      dialogBox.getCancelButton().addClickHandler(new ClickHandler() {
+        @Override
+        public void onClick(ClickEvent event) {
+          dialogBox.hide();
+        }
+      });
+
+      // Tab change
+      TabPanel panel = (TabPanel) dialogBox.getWidget();
+      panel.addSelectionHandler(new SelectionHandler<Integer>() {
+        @Override
+        public void onSelection(SelectionEvent<Integer> tabIndex) {
+          if (tabIndex.getSelectedItem()==0) {
+            // Receiving addresses
+            dialogBox.getSendingAddressGrid().setVisible(false);
+            dialogBox.getReceivingAddressGrid().setVisible(true);
+          }
+          if (tabIndex.getSelectedItem()==1) {
+            // Sending addresses
+            dialogBox.getSendingAddressGrid().setVisible(true);
+            dialogBox.getReceivingAddressGrid().setVisible(false);
+          }
+        }
+      });
     }
   }
 }
