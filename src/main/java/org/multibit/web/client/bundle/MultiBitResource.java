@@ -16,6 +16,6 @@ public interface MultiBitResource extends ClientBundle {
 
   public static final MultiBitResource INSTANCE = GWT.create(MultiBitResource.class);
 
-  @ClientBundle.Source("send-big.jpg")
+  @ClientBundle.Source("images/send-big.jpg")
   public ImageResource sendBig();
 }

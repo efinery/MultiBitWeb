@@ -35,10 +35,12 @@ public class SendBitcoinDialogBox extends DialogBox {
 
     // Create the general structure
     final SendBitcoinDialogBox dialogBox = new SendBitcoinDialogBox();
-    dialogBox.setWidth("800px");
+
     dialogBox.setVisible(false);
     dialogBox.setText("Send Bitcoin");
     dialogBox.setAnimationEnabled(true);
+    // Append this style to ensure standard GWT styling is maintained
+    dialogBox.setStyleName("sendBitcoinDialogBox",true);
 
     // Configure the controls to allow external access
     dialogBox.setSendBitcoinImage(new Image(MultiBitResource.INSTANCE.sendBig()));
@@ -57,27 +59,38 @@ public class SendBitcoinDialogBox extends DialogBox {
     // Dialog contains a vertical panel widget for content
     FlexTable panel = new FlexTable();
 
-    // Adjust the FlexTable using it's Formatter
-    FlexTable.FlexCellFormatter formatter = panel.getFlexCellFormatter();
-    formatter.setWidth(0,1,"75%");
-    formatter.setWidth(1,1,"75%");
-    formatter.setWidth(2,1,"75%");
-    formatter.setWidth(3,1,"75%");
-    formatter.setWidth(4,0,"90%");
-
+    // Panel is 4x7 to allow for variable column width presentation
+    // Row 0
     panel.setWidget(0,0,dialogBox.getSendBitcoinImage());
     panel.setHTML(0, 1, "Enter the address you want to send bitcoins to and the amount to send.<br>Optionally add a descriptive label for the address.");
+
+    // Row 1 Address (wide)
     panel.setWidget(1, 0, dialogBox.getAddressLabel());
     panel.setWidget(1, 1, dialogBox.getAddressTextBox());
     panel.setWidget(1, 2, dialogBox.getPasteButton());
     panel.setWidget(1, 3, dialogBox.getAddressBookButton());
+
+    // Row 2 Label
     panel.setWidget(2, 0, dialogBox.getLabelLabel());
     panel.setWidget(2, 1, dialogBox.getLabelTextBox());
+
+    // Row 3 Amount
     panel.setWidget(3, 0, dialogBox.getAmountLabel());
     panel.setWidget(3, 1, dialogBox.getAmountTextBox());
     panel.setWidget(3, 2, dialogBox.getDenominationLabel());
+
+    // Row 4 Buttons
     panel.setWidget(4, 3, dialogBox.getCancelButton());
-    panel.setWidget(4,4,dialogBox.getSendButton());
+    panel.setWidget(4, 4,dialogBox.getSendButton());
+
+    // CSS styling
+
+    // Adjust the column width using it's formatter
+    HTMLTable.ColumnFormatter formatter = panel.getColumnFormatter();
+    formatter.setStyleName(1,"sendBitcoinDialogBox-wide");
+
+    dialogBox.getAddressTextBox().setStyleName("sendBitcoinDialogBox-wide");
+    dialogBox.getLabelTextBox().setStyleName("sendBitcoinDialogBox-wide");
 
     // Bind it to the dialog
     dialogBox.setWidget(panel);
