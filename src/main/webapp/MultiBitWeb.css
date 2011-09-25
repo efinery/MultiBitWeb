@@ -42,10 +42,19 @@ h1 {
   margin: 15px 6px 6px;
 }
 
-/** DialogBox specific */
+/** SendBitcoin DialogBox specific */
 .sendBitcoinDialogBox {
   width: 800px;
 }
 .sendBitcoinDialogBox-wide {
+  width: 400px;
+}
+
+/** ReceiveBitcoin DialogBox specific */
+.receiveBitcoinDialogBox {
+  width: 800px;
+}
+
+.receiveBitcoinDialogBox-wide {
   width: 400px;
 }

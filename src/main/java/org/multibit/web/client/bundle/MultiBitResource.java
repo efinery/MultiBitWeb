@@ -18,4 +18,7 @@ public interface MultiBitResource extends ClientBundle {
 
   @ClientBundle.Source("images/send-big.jpg")
   public ImageResource sendBig();
+
+  @ClientBundle.Source("images/receive-big.jpg")
+  public ImageResource receiveBig();
 }

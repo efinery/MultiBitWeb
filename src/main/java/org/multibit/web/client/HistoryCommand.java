@@ -4,6 +4,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Command;
 import org.multibit.web.client.dialog.AboutDialogBox;
+import org.multibit.web.client.dialog.ReceiveBitcoinDialogBox;
 import org.multibit.web.client.dialog.SendBitcoinDialogBox;
 
 /**
@@ -39,6 +40,19 @@ public class HistoryCommand implements Command {
     }
     if ("SEND_BITCOIN".equals(historyToken)) {
       final SendBitcoinDialogBox dialogBox = SendBitcoinDialogBox.newInstance();
+      dialogBox.center();
+      dialogBox.getCancelButton().setFocus(true);
+
+      dialogBox.getCancelButton().addClickHandler(new ClickHandler() {
+        @Override
+        public void onClick(ClickEvent event) {
+          dialogBox.hide();
+        }
+      });
+
+    }
+    if ("RECEIVE_BITCOIN".equals(historyToken)) {
+      final ReceiveBitcoinDialogBox dialogBox = ReceiveBitcoinDialogBox.newInstance();
       dialogBox.center();
       dialogBox.getCancelButton().setFocus(true);
 
