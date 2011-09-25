@@ -41,7 +41,7 @@ public class ReceiveBitcoinDialogBox extends DialogBox {
     dialogBox.setStyleName("receiveBitcoinDialogBox",true);
 
     // Configure the controls to allow external access
-    dialogBox.setSendBitcoinImage(new Image(MultiBitResource.INSTANCE.receiveBig()));
+    dialogBox.setSendBitcoinImage(new Image(MultiBitResource.INSTANCE.receiveBitcoinBig()));
     dialogBox.setAddressLabel(new Label("Address"));
     dialogBox.setLabelLabel(new Label("Label"));
     dialogBox.setAddressBookButton(new Button("Address Book"));

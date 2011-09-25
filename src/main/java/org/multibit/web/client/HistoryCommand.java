@@ -27,6 +27,7 @@ public class HistoryCommand implements Command {
     historyToken = newToken;
   }
 
+  // TODO Refactor this into something that scales better
   @Override
   public void execute() {
     if ("ABOUT".equals(historyToken)) {

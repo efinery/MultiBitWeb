@@ -62,3 +62,23 @@ h1 {
 .addressBookDialogBox {
   width: 800px;
 }
+
+.commandBar {
+  width: 100%;
+  background-color: #E3E8F3;
+}
+
+/** Transaction grid specific */
+.transactionGrid {
+  width: 100%;
+  padding: 0px;
+  background-color: #E3E8F3;
+  background-image: url("images/bitcoin-watermark.jpg") ;
+  font-weight: bold;
+}
+.transactionGrid-header {
+  width: 100%;
+  background-color: #E3E8F3;
+  font-weight: bold;
+}
+
